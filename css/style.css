@@ -1,3 +1,72 @@
+.navbar {
+  outline: 2px solid black;
+  height: 5rem;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.navbar .hamburger img {
+  cursor: pointer;
+}
+.navbar .hamburger #ham {
+  display: inline;
+}
+.navbar .hamburger #close {
+  display: none;
+}
+.navbar .navplate {
+  position: absolute;
+  display: inline;
+  z-index: 2;
+  background-color: black;
+  width: 100%;
+  left: 0;
+}
+.navbar .navplate ul li a {
+  color: white;
+}
+@media (min-width: 768px) {
+  .navbar .hamburger #ham {
+    display: none;
+  }
+  .navbar .hamburger #close {
+    display: none;
+  }
+  .navbar .navplate {
+    display: inline;
+  }
+  .navbar .navplate ul li {
+    display: inline-block;
+    margin: 0 1rem;
+  }
+  .navbar .navplate ul li a {
+    font-size: 0.9rem;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #c2baba;
+  }
+  .navbar .navplate ul li a:hover {
+    color: #2b272f;
+  }
+  .navbar .navplate ul li:nth-child(4) {
+    border: 2px solid #2d2640;
+    padding: 0.5rem 1.5rem;
+  }
+  .navbar .navplate ul li:nth-child(4):hover {
+    cursor: pointer;
+    background-color: #2d2640;
+  }
+  .navbar .navplate ul li:nth-child(4):hover a {
+    color: white;
+  }
+  .navbar .navplate ul li:nth-child(4) a {
+    color: #2d2640;
+  }
+}
+
 *,
 *::after,
 *::before {
