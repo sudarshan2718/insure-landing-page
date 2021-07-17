@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github link](https://github.com/SUDARSHANVEMARAPU/insure-landing-page)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [live site](https://sudarshanvemarapu.github.io/insure-landing-page/)
 
 ## My process
 
