@@ -7,82 +7,128 @@
     justify-content: space-between;
     position: relative;
     .hamburger {
-        
         img {
             cursor: pointer;
-        }
-        #ham {
-            
-            display: inline;
-        }
-        #close {
             display: none;
         }
+        .ham {
+            display: inline;
+        }
+        .close{
+            display: inline;
+        }
+        
     }
     .navplate {
         position: absolute;
-        display: inline;
-        z-index: 2;
-        background-color: black;
+        display: none;
+        z-index: 1;
+        background-color: #221c25;
         width: 100%;
-
+        text-align: center;
         left: 0;
-        
-        ul{
-            li{
-                a{
-                    color: white;
-                }
+        top: 5rem;
+        #nav-pattern{
+            
+            img{
+                width: 100%;
             }
         }
+
+        ul {
+            li {
+                margin: 2.8125rem 0;
+                
+                a {
+
+                    color: white;
+                    font-size: 1.2rem;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    &:hover {
+                        padding: 1em 6em;
+                        border: 2px solid white;
+                    }
+                }
+                &:hover {
+                    cursor: pointer;
+                    
+                    // padding: 0.5rem 1.5rem;
+                }
+                &:nth-child(1){
+                    margin-top: 3.3125rem;
+                }
+                &:nth-child(4){
+                    margin-bottom: 4rem;
+                }
+            }
+            
+        }
+
+    }
+    .navdisplay {
+        display: inline;
     }
     @media (min-width: var.$tablet) {
         .hamburger {
-            #ham {
+            .ham {
                 display: none;
             }
-            #close {
+            .close {
                 display: none;
             }
         }
         .navplate {
             display: inline;
+            position: static;
+            background-color: #fff;
+            #nav-pattern{display: none;}
             ul {
                 li {
-                    
+                    position: static;
+                    margin: 0;
                     a {
+
                         font-size: 0.9rem;
-                        border: none;
                         text-decoration: none;
                         text-transform: uppercase;
                         font-weight: 700;
                         color: var.$light-gray;
-                        &:hover{
+                        &:hover {
+                            padding: 0;
+                            border: none;
                             color: var.$very-dark-violet;
                         }
                     }
                     display: inline-block;
                     margin: 0 1rem;
-                    
-                    &:nth-child(4){
-                        &:hover{
+
+                    &:nth-child(4) {
+                        &:hover {
                             cursor: pointer;
                             background-color: var.$dark-violet;
-                            a{
+                            a {
                                 color: white;
                             }
                         }
                         border: 2px solid var.$dark-violet;
-                        padding:  0.5rem 1.5rem;
-                        a{
+                        padding: 0.5rem 1.5rem;
+                        a {
                             color: var.$dark-violet;
                         }
                     }
-                    
+                    &:nth-child(1){
+                        margin-top: 0;
+                    }
+                    &:nth-child(4){
+                        margin-bottom: 0;
+                    }
                 }
-
-                
             }
+        }
+        .navdisplay{
+            display: inline;
         }
     }
 }
