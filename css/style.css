@@ -1,3 +1,112 @@
+footer {
+  display: block;
+  background-color: rgba(128, 128, 128, 0.075);
+  text-align: center;
+}
+footer #brand {
+  padding-top: 3rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+footer #brand #footer-mobile {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+footer #brand #foot-logo {
+  margin: 2rem 0;
+  margin-bottom: 1.5rem;
+}
+footer #brand #social-icons {
+  margin-bottom: 2rem;
+}
+footer #brand #social-icons img {
+  margin: 0 2px;
+}
+footer #brand::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 80%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.171);
+}
+footer #brand #footer-desktop {
+  display: none;
+}
+footer #about {
+  margin-bottom: 7rem;
+  text-transform: uppercase;
+}
+footer #about div {
+  font-weight: 700;
+}
+footer #about div span {
+  color: rgba(0, 0, 0, 0.459);
+  display: block;
+  margin: 2rem 0;
+}
+footer #about div ul {
+  color: rgba(0, 0, 0, 0.74);
+  list-style: none;
+}
+footer #about div ul li {
+  margin: 7px 0;
+}
+
+@media (min-width: 768px) {
+  footer #brand {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  footer #brand #footer-mobile {
+    display: none;
+  }
+  footer #brand #footer-desktop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline;
+  }
+  footer #brand #foot-logo {
+    padding-left: 9%;
+    margin: 0;
+  }
+  footer #brand #social-icons {
+    padding-right: 9%;
+  }
+  footer #brand #social-icons img {
+    margin: 0 2px;
+  }
+  footer #brand::after {
+    display: none;
+  }
+  footer #brand::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 82%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.295);
+    transform: translateX(11.2%);
+  }
+  footer ul {
+    list-style: none;
+  }
+  footer #about {
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+  }
+  footer #about div {
+    text-align: left;
+  }
+}
 .navbar {
   height: 5rem;
   padding: 1.5rem 2rem;
@@ -18,7 +127,7 @@
 .navbar .navplate {
   position: absolute;
   display: none;
-  z-index: 1;
+  z-index: 2;
   background-color: #221c25;
   width: 100%;
   text-align: center;
@@ -27,6 +136,9 @@
 }
 .navbar .navplate #nav-pattern img {
   width: 100%;
+}
+.navbar .navplate ul {
+  list-style: none;
 }
 .navbar .navplate ul li {
   margin: 2.8125rem 0;
@@ -62,13 +174,28 @@
     display: none;
   }
   .navbar .navplate {
+    margin-left: 15%;
     display: inline;
     position: static;
     background-color: #fff;
   }
+}
+@media (min-width: 768px) and (min-width: 1000px) {
+  .navbar .navplate {
+    margin-left: 35%;
+  }
+}
+@media (min-width: 768px) and (min-width: 1440px) {
+  .navbar .navplate {
+    margin-left: 60%;
+  }
+}
+@media (min-width: 768px) {
   .navbar .navplate #nav-pattern {
     display: none;
   }
+}
+@media (min-width: 768px) {
   .navbar .navplate ul li {
     position: static;
     margin: 0;
@@ -107,6 +234,8 @@
   .navbar .navplate ul li:nth-child(4) {
     margin-bottom: 0;
   }
+}
+@media (min-width: 768px) {
   .navbar .navdisplay {
     display: inline;
   }
@@ -274,12 +403,30 @@ body {
   font-family: "Karla", sans-serif;
 }
 
+.shadowhero {
+  position: relative;
+}
+.shadowhero::after {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.829));
+}
+
 .shadowmain {
-  background: linear-gradient(rgba(0, 0, 0, 0.808), rgba(0, 0, 0, 0.418), rgba(0, 0, 0, 0.267));
+  background: linear-gradient(rgba(0, 0, 0, 0.829), rgba(0, 0, 0, 0.685));
+}
+
+.shadowspace {
+  background: linear-gradient(rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0.356));
 }
 
 .shadowfoot {
-  background: linear-gradient(rgba(0, 0, 0, 0.267), rgba(0, 0, 0, 0.164));
+  background: linear-gradient(rgba(0, 0, 0, 0.356), rgba(0, 0, 0, 0.171));
 }
 
 h1, h2 {
@@ -287,7 +434,8 @@ h1, h2 {
 }
 
 .attribution {
-  font-size: 11px;
+  padding: 1rem;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -304,8 +452,11 @@ h1, h2 {
     background: none;
   }
 }
+#space {
+  height: 10rem;
+}
+
 main {
-  margin-bottom: 10rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -372,6 +523,10 @@ main .content-footer #work-mobile {
   right: 0;
   top: 0;
   height: 100%;
+}
+
+#space {
+  border: none;
 }
 
 @media (min-width: 768px) {

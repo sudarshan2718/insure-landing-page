@@ -14,18 +14,37 @@ body {
     height: 100vh;
     font-family: var.$karla;
 }
+.shadowhero {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.829));
+    }
+}
 .shadowmain{
-    background: linear-gradient(rgba(0, 0, 0, 0.808),rgba(0, 0, 0, 0.418),rgba(0, 0, 0, 0.267))
+    background: linear-gradient(rgba(0, 0, 0, 0.829),rgba(0, 0, 0, 0.685))
+}
+.shadowspace{
+    background: linear-gradient(rgba(0, 0, 0, 0.685),rgba(0, 0, 0, 0.356))
+
 }
 .shadowfoot{
-    background: linear-gradient(rgba(0, 0, 0, 0.267),rgba(0, 0, 0, 0.164))
+    background: linear-gradient(rgba(0, 0, 0, 0.356),rgba(0, 0, 0, 0.171))
 }
+
 
 h1,h2{
     font-family: var.$dmserif;
 }
 .attribution {
-    font-size: 11px;
+    padding: 1rem;
+    font-size: 1rem;
     text-align: center;
 }
 .attribution a {

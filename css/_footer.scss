@@ -1,0 +1,123 @@
+@use './variables' as var;
+footer{
+    
+    display: block;    
+    background-color: rgba(128, 128, 128, 0.075);
+    text-align: center;
+    #brand{
+        #footer-mobile{
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            // right: 0;
+        }
+        padding-top: 3rem;
+        margin-bottom: 4rem;
+        #foot-logo{
+            
+            margin: 2rem 0;
+            margin-bottom: 1.5rem;
+        }
+        #social-icons{
+            img{
+                margin: 0 2px;
+            }
+            margin-bottom: 2rem;
+        }
+
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            height: 1px;
+            width: 80%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.171);
+        }
+        #footer-desktop{
+            display: none;
+        }
+    }
+    #about{
+        margin-bottom: 7rem;
+        text-transform: uppercase;
+        div{
+            font-weight: 700;
+            span{
+                color: rgba(0, 0, 0, 0.459);
+                display: block;
+                margin: 2rem 0;
+            }
+            ul{
+                color: rgba(0, 0, 0, 0.74);
+                list-style: none;
+                li{
+                    margin: 7px 0;
+                }
+            }
+        }
+    }
+    
+
+}
+
+@media (min-width: var.$tablet){
+    
+    footer{
+        
+        #brand{
+            
+            #footer-mobile{
+                display: none;   // right: 0;
+            }
+            #footer-desktop{
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: inline;
+            }
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            #foot-logo{
+                padding-left: 9%;
+                margin: 0;
+            }
+            #social-icons{
+                padding-right: 9%;
+
+                img{
+                    margin: 0 2px;
+                }
+                // margin-bottom: 2rem;
+            }
+            &::after{
+                display: none;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 82%;
+                height: 1px;
+                background-color: rgba(0, 0, 0, 0.295);
+                transform: translateX(11.2%)
+            }
+        }
+        ul{
+            list-style: none;
+        }
+        #about{
+            padding: 0 10%;
+            display: flex;
+            justify-content: space-between;           
+            div{
+                text-align: left;
+            }
+        }
+    }
+}

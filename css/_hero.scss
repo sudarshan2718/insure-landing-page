@@ -1,15 +1,18 @@
 @use './variables' as var;
+
 .hero {
     // outline: 2px solid black;
     #hero-image-mobile {
         img {
             width: 100%;
             display: block;
+
             @media (min-width: var.$tablet) {
                 display: none;
             }
         }
     }
+
     #hero-image-desktop {
         img {
             display: none;
@@ -72,7 +75,9 @@
         display: none;
     }
 }
-
+// .shadowhero{
+//     background: linear-gradient(rgba(0, 0, 0, 0.719),rgba(0, 0, 0, 0.452));
+// }
 @media (min-width: var.$tablet) {
     .hero {
         // width: 100vw;
@@ -122,7 +127,6 @@
                 // left: 20%;
                 @media (min-width: var.$desktop) {
                     width: auto;
-                    
                 }
             }
         }

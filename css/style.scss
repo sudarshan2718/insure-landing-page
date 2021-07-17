@@ -4,14 +4,16 @@
 @use './globals';
 @use './mixins' as mix;
 @use './variables' as var;
-
+#space{
+    height: 10rem;
+}
 main {
-    margin-bottom: 10rem;
     display: flex;
     flex-direction: column;
     text-align: center;
     color: rgba(0, 0, 0, 0.781);
     padding: 0 2rem;
+    
     .content {
         display: flex;
         flex-direction: column;
@@ -75,7 +77,9 @@ main {
         }
     }
 }
-
+#space{
+    border: none;
+}
 @media (min-width: var.$tablet) {
     main {
         display: flex;

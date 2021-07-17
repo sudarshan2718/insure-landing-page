@@ -3,6 +3,7 @@
     // outline: 2px solid black;
     height: 5rem;
     padding: 1.5rem 2rem;
+    
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -22,7 +23,7 @@
     .navplate {
         position: absolute;
         display: none;
-        z-index: 1;
+        z-index: 2;
         background-color: #221c25;
         width: 100%;
         text-align: center;
@@ -36,6 +37,7 @@
         }
 
         ul {
+            list-style: none;
             li {
                 margin: 2.8125rem 0;
                 
@@ -71,6 +73,7 @@
         display: inline;
     }
     @media (min-width: var.$tablet) {
+        
         .hamburger {
             .ham {
                 display: none;
@@ -80,11 +83,19 @@
             }
         }
         .navplate {
+            margin-left: 15%;
+            @media(min-width: 1000px) {
+                margin-left: 35%;
+            }
+            @media (min-width: var.$desktop) {
+                margin-left: 60%;
+            }
             display: inline;
             position: static;
             background-color: #fff;
             #nav-pattern{display: none;}
             ul {
+                
                 li {
                     position: static;
                     margin: 0;
