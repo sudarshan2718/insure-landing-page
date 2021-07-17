@@ -1,5 +1,4 @@
 .navbar {
-  outline: 2px solid black;
   height: 5rem;
   padding: 1.5rem 2rem;
   display: flex;
@@ -113,27 +112,24 @@
   }
 }
 
-.hero {
-  outline: 2px solid black;
-}
-.hero div #hero-image img:nth-child(2) {
-  display: none;
-}
-@media (min-width: 768px) {
-  .hero div #hero-image img:nth-child(2) {
-    display: block;
-  }
-}
-.hero div #hero-image img:nth-child(1) {
+.hero #hero-image-mobile img {
   width: 100%;
   display: block;
 }
 @media (min-width: 768px) {
-  .hero div #hero-image img:nth-child(1) {
+  .hero #hero-image-mobile img {
     display: none;
   }
 }
-.hero div #hero-content {
+.hero #hero-image-desktop img {
+  display: none;
+}
+@media (min-width: 768px) {
+  .hero #hero-image-desktop img {
+    display: inline;
+  }
+}
+.hero #hero-content {
   background-color: #2d2640;
   text-align: center;
   color: white;
@@ -141,17 +137,17 @@
   font-size: 1rem;
   position: relative;
 }
-.hero div #hero-content h1 {
+.hero #hero-content h1 {
   font-weight: 400;
   font-size: 3rem;
 }
-.hero div #hero-content p {
+.hero #hero-content p {
   font-size: 1.2rem;
   line-height: 1.5em;
   margin: 1.2rem;
   margin-bottom: 4em;
 }
-.hero div #hero-content a {
+.hero #hero-content a {
   border: 2px solid white;
   padding: 0.8em 2.4em;
   color: white;
@@ -159,24 +155,102 @@
   text-decoration: none;
   font-weight: 700;
 }
-.hero div #hero-content a:hover {
+.hero #hero-content a:hover {
   background: white;
   color: #2d2640;
 }
-.hero div #hero-content img {
+.hero #hero-content img {
   position: absolute;
   z-index: 1;
 }
-.hero div #hero-content #left-mobile {
+.hero #hero-content #left-mobile {
   top: 0;
   left: 0;
 }
-.hero div #hero-content #right-mobile {
+@media (min-width: 768px) {
+  .hero #hero-content #left-mobile {
+    display: none;
+  }
+}
+.hero #hero-content #right-mobile {
   top: 27em;
   right: 0;
   width: 30%;
 }
+@media (min-width: 768px) {
+  .hero #hero-content #right-mobile {
+    display: none;
+  }
+}
+.hero #left-desktop,
+.hero #right-desktop {
+  display: none;
+}
 
+@media (min-width: 768px) {
+  .hero {
+    position: relative;
+    display: flex;
+    padding: 2rem;
+    background-color: #2d2640;
+  }
+  .hero #hero-content {
+    padding-top: 8.8rem;
+    padding-left: 6em;
+    position: relative;
+    flex-basis: 60%;
+    text-align: left;
+  }
+  .hero #hero-content p {
+    margin-left: 0;
+  }
+  .hero #hero-content::before {
+    position: absolute;
+    content: "";
+    padding: 0 4rem;
+    top: 6rem;
+    bottom: 0;
+    height: 1px;
+    background-color: white;
+  }
+  .hero #hero-image-desktop {
+    flex-basis: 40%;
+    position: relative;
+  }
+  .hero #hero-image-desktop img {
+    position: absolute;
+    z-index: 1;
+    top: 15%;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (min-width: 1440px) {
+  .hero #hero-image-desktop img {
+    width: auto;
+  }
+}
+@media (min-width: 768px) {
+  .hero img {
+    position: absolute;
+    z-index: 1;
+  }
+}
+@media (min-width: 768px) {
+  .hero #left-desktop {
+    display: inline;
+    top: 70%;
+    bottom: 0;
+    left: 0;
+  }
+}
+@media (min-width: 768px) and (min-width: 1440px) {
+  .hero #right-desktop {
+    display: inline;
+    right: 0;
+    top: 0;
+    height: 90%;
+  }
+}
 *,
 *::after,
 *::before {
@@ -190,6 +264,8 @@ html {
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   font-family: "Karla", sans-serif;
 }
 

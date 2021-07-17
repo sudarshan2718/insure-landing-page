@@ -1,70 +1,145 @@
 @use './variables' as var;
-.hero{
-    outline: 2px solid black;
-    div{
-        #hero-image{
-            img:nth-child(2){
+.hero {
+    // outline: 2px solid black;
+    #hero-image-mobile {
+        img {
+            width: 100%;
+            display: block;
+            @media (min-width: var.$tablet) {
                 display: none;
-                @media(min-width: var.$tablet){
-                    display: block;
-                }
             }
-            img:nth-child(1){
-                width: 100%;
-                display: block;
-                @media(min-width: var.$tablet){
-                    display: none;
-                }
-            } 
         }
-        #hero-content{
-            
-            background-color: var.$dark-violet;
-            text-align: center;
+    }
+    #hero-image-desktop {
+        img {
+            display: none;
+            @media (min-width: var.$tablet) {
+                display: inline;
+            }
+        }
+    }
+    #hero-content {
+        background-color: var.$dark-violet;
+        text-align: center;
+        color: white;
+        padding: 6.125rem 1rem;
+        font-size: 1rem;
+        position: relative;
+        h1 {
+            font-weight: 400;
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5em;
+            margin: 1.2rem;
+            margin-bottom: 4em;
+        }
+        a {
+            border: 2px solid white;
+            padding: 0.8em 2.4em;
             color: white;
-            padding: 6.125rem 1rem;
-            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 700;
+            &:hover {
+                background: white;
+                color: var.$dark-violet;
+            }
+        }
+        img {
+            position: absolute;
+            z-index: 1;
+        }
+        #left-mobile {
+            top: 0;
+            left: 0;
+            @media (min-width: var.$tablet) {
+                display: none;
+            }
+        }
+        #right-mobile {
+            top: 27em;
+            right: 0;
+            width: 30%;
+            @media (min-width: var.$tablet) {
+                display: none;
+            }
+        }
+    }
+    #left-desktop,
+    #right-desktop {
+        display: none;
+    }
+}
+
+@media (min-width: var.$tablet) {
+    .hero {
+        // width: 100vw;
+        position: relative;
+        display: flex;
+        padding: 2rem;
+        // position: relative;
+        background-color: var.$dark-violet;
+        #hero-content {
+            // outline: 2px solid yellow;
+            padding-top: 8.8rem;
+            padding-left: 6em;
+            // padding-right: 2em;
             position: relative;
-            h1{
-                font-weight: 400;
-                font-size: 3rem;
+            flex-basis: 60%;
+            // width: 50%;
+            text-align: left;
+            p {
+                margin-left: 0;
+                // margin-right: 5rem;
             }
-            p{
-                font-size: 1.2rem;
-                line-height: 1.5em;
-                margin: 1.2rem;
-                margin-bottom: 4em;
+
+            &::before {
+                position: absolute;
+                content: "";
+                padding: 0 4rem;
+                top: 6rem;
+                bottom: 0;
+                height: 1px;
+                background-color: white;
             }
-            a{
-                border: 2px solid white;
-                padding: 0.8em 2.4em;
-                ;
-                color: white;
-                text-transform: uppercase;
-                text-decoration: none;
-                font-weight: 700;
-                &:hover{
-                    
-                    background: white;
-                    color: var.$dark-violet;
-                }
-            }
-            img{
+        }
+
+        #hero-image-desktop {
+            // outline: 2px solid green;
+            flex-basis: 40%;
+            // margin: 1rem;
+            position: relative;
+            img {
                 position: absolute;
                 z-index: 1;
-                
+                top: 15%;
+                width: 100%;
+                // height: 100%;
+                // left: 20%;
+                @media (min-width: var.$desktop) {
+                    width: auto;
+                }
             }
-            #left-mobile{
-                top: 0;
-                left: 0;
-            }
-            #right-mobile{
-                top: 27em;
+        }
+        img {
+            position: absolute;
+            z-index: 1;
+        }
+        #left-desktop {
+            display: inline;
+            top: 70%;
+            bottom: 0;
+            left: 0;
+        }
+        @media (min-width: var.$desktop) {
+            #right-desktop {
+                display: inline;
                 right: 0;
-                width: 30%;
+                top: 0;
+                height: 90%;
             }
-            
-
         }
     }
 }
