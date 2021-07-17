@@ -87,8 +87,13 @@
             @media(min-width: 1000px) {
                 margin-left: 35%;
             }
+
             @media (min-width: var.$desktop) {
                 margin-left: 60%;
+            }
+
+            @media(min-width: 1400px){
+                margin-left: 50%;
             }
             display: inline;
             position: static;

@@ -190,6 +190,11 @@ footer #about div ul li {
     margin-left: 60%;
   }
 }
+@media (min-width: 768px) and (min-width: 1400px) {
+  .navbar .navplate {
+    margin-left: 50%;
+  }
+}
 @media (min-width: 768px) {
   .navbar .navplate #nav-pattern {
     display: none;
