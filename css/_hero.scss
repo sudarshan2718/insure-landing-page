@@ -1,0 +1,70 @@
+@use './variables' as var;
+.hero{
+    outline: 2px solid black;
+    div{
+        #hero-image{
+            img:nth-child(2){
+                display: none;
+                @media(min-width: var.$tablet){
+                    display: block;
+                }
+            }
+            img:nth-child(1){
+                width: 100%;
+                display: block;
+                @media(min-width: var.$tablet){
+                    display: none;
+                }
+            } 
+        }
+        #hero-content{
+            
+            background-color: var.$dark-violet;
+            text-align: center;
+            color: white;
+            padding: 6.125rem 1rem;
+            font-size: 1rem;
+            position: relative;
+            h1{
+                font-weight: 400;
+                font-size: 3rem;
+            }
+            p{
+                font-size: 1.2rem;
+                line-height: 1.5em;
+                margin: 1.2rem;
+                margin-bottom: 4em;
+            }
+            a{
+                border: 2px solid white;
+                padding: 0.8em 2.4em;
+                ;
+                color: white;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-weight: 700;
+                &:hover{
+                    
+                    background: white;
+                    color: var.$dark-violet;
+                }
+            }
+            img{
+                position: absolute;
+                z-index: 1;
+                
+            }
+            #left-mobile{
+                top: 0;
+                left: 0;
+            }
+            #right-mobile{
+                top: 27em;
+                right: 0;
+                width: 30%;
+            }
+            
+
+        }
+    }
+}
